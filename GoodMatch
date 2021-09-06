@@ -1,0 +1,74 @@
+/* Generated from Java with JSweet 3.0.0 - http://www.jsweet.org */
+var org;
+(function (org) {
+    var jsweet;
+    (function (jsweet) {
+        var GoodMatch = /** @class */ (function () {
+            function GoodMatch() {
+            }
+            GoodMatch.uniqueCharacters = function (str1, str2) {
+                var temp = "";
+                var test = str1 + "Matches" + str2;
+                for (var i = 0; i < test.length; i++) {
+                    {
+                        if (temp.indexOf(test.charAt(i)) === -1) {
+                            temp = temp + test.charAt(i);
+                        }
+                    }
+                    ;
+                }
+                return temp + " ";
+            };
+            GoodMatch.total = function (sumation) {
+                var sum = ([]);
+                while (( /* size */sum.length > 2)) {
+                    {
+                        for (var i = 0; i < /* size */ sumation.length; i++) {
+                            {
+                                /* add */ sum.splice(i, 0, /* get */ sumation[i] + /* get */ sumation[ /* size */sumation.length - 1] - i);
+                            }
+                            ;
+                        }
+                    }
+                }
+                ;
+                return /* get */ sum[0] + /* get */ sum[1];
+            };
+            GoodMatch.GoodMatchs = function (str1, str2) {
+                var str3 = "Matches";
+                var finalStr = str1 + str3 + str2;
+                var counter = 0;
+                var unique = GoodMatch.uniqueCharacters(str1, str2);
+                var nums = ([]);
+                for (var i = 0; i < unique.length; i++) {
+                    {
+                        for (var j = 0; j < finalStr.length; j++) {
+                            {
+                                if ((function (c) { return c.charCodeAt == null ? c : c.charCodeAt(0); })(unique.charAt(i)) == (function (c) { return c.charCodeAt == null ? c : c.charCodeAt(0); })(finalStr.charAt(j))) {
+                                    counter += 1;
+                                }
+                            }
+                            ;
+                        }
+                        /* add */ nums.splice(i, 0, counter);
+                        counter = 0;
+                    }
+                    ;
+                }
+                var tot = GoodMatch.total(nums);
+                return str1 + str3 + str2 + tot + "%";
+            };
+            GoodMatch.main = function (args) {
+                var scan = new java.util.Scanner(java.lang.System["in"]);
+                console.info("Please enter name1: ");
+                var name1 = scan.next();
+                console.info("Please enter name2: ");
+                var name2 = scan.next();
+            };
+            return GoodMatch;
+        }());
+        jsweet.GoodMatch = GoodMatch;
+        GoodMatch["__class"] = "org.jsweet.GoodMatch";
+    })(jsweet = org.jsweet || (org.jsweet = {}));
+})(org || (org = {}));
+org.jsweet.GoodMatch.main(null);
